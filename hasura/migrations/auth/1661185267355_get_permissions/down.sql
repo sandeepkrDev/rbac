@@ -1,0 +1,10 @@
+-- Could not auto-generate a down migration.
+-- Please write an appropriate down migration for the SQL below:
+-- CREATE OR REPLACE FUNCTION public.get_permissions()
+--  RETURNS SETOF permissions
+--  LANGUAGE plpgsql
+-- AS $function$
+-- BEGIN
+--     return query select * from public.permissions;
+-- END
+-- $function$;

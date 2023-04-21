@@ -1,0 +1,6 @@
+function:
+  name: get_roles_by_userid
+  schema: public
+configuration:
+  custom_root_fields: {}
+  exposed_as: mutation

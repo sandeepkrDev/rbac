@@ -1,0 +1,282 @@
+type Mutation {
+  addProduct(
+    name: String!
+    description: String!
+    price: Int!
+  ): productOutput
+}
+
+type Mutation {
+  attachPermissionToRole(
+    permissionKey: String!
+    roleKey: String!
+  ): response
+}
+
+type Mutation {
+  attachRoleToUser(
+    roleKey: String!
+    userID: uuid!
+  ): response
+}
+
+type Mutation {
+  changePassword(
+    newPassword: String!
+    confirmPassword: String!
+  ): response
+}
+
+type Mutation {
+  deletePermission(
+    key: String!
+  ): response
+}
+
+type Mutation {
+  deleteRole(
+    roleName: String!
+  ): response
+}
+
+type Mutation {
+  detachPermissionToRole(
+    permissionKey: String!
+    roleKey: String!
+  ): response
+}
+
+type Mutation {
+  detachRoleToUser(
+    roleKey: String!
+    userID: uuid!
+  ): response
+}
+
+type Query {
+  forgotPassword(
+    email: String!
+  ): forgotPasswordResponse
+}
+
+type Query {
+  getPermissions: listResponse
+}
+
+type Query {
+  getPermissionsByRole(
+    roleKey: String!
+  ): permissionResponse
+}
+
+type Query {
+  getProducts: productsOutput
+}
+
+type Query {
+  getRoles: listResponse
+}
+
+type Query {
+  getRolesByUserID(
+    id: uuid!
+  ): rolesResponse
+}
+
+type Query {
+  getUsers: usersResponse
+}
+
+type Query {
+  getUsersByRole(
+    roleKey: String!
+  ): usersByRoleResponse
+}
+
+type Mutation {
+  insertPermission(
+    key: String!
+    value: String!
+  ): response
+}
+
+type Mutation {
+  insertRole(
+    roleName: String!
+  ): response
+}
+
+type Mutation {
+  resetPassword(
+    token: String!
+    newPassword: String!
+    confirmPassword: String!
+  ): response
+}
+
+type Query {
+  signin(
+    email: String!
+    password: String!
+  ): signinOutput
+}
+
+type Mutation {
+  signup(
+    name: String!
+    email: String!
+    password: String!
+    isSeller: Boolean!
+  ): signupOutput
+}
+
+type Query {
+  whoAmI: whoAmI
+}
+
+input signinInput {
+  email: String!
+  password: String!
+}
+
+input SampleInput {
+  username: String!
+  password: String!
+}
+
+type usersList {
+  id: String!
+  name: String!
+  email: String!
+  user_roles: [role]
+}
+
+type signupOutput {
+  success: Boolean!
+  message: String!
+  data: authResponse
+}
+
+type token {
+  token: String!
+}
+
+type singinOutput {
+  success: Boolean!
+  message: String!
+  data: authResponse
+}
+
+type response {
+  success: Boolean!
+  message: String!
+}
+
+type authResponse {
+  id: String!
+  name: String!
+  email: String!
+  roles: [String]
+  token: String!
+}
+
+type signinOutput {
+  success: Boolean!
+  message: String!
+  data: authResponse
+}
+
+type SampleOutput {
+  accessToken: String!
+}
+
+type listResponse {
+  success: Boolean!
+  message: String!
+  data: [lists]
+}
+
+type lists {
+  key: String!
+  created_at: String!
+  updated_at: String!
+}
+
+type usersResponse {
+  success: Boolean!
+  message: String!
+  data: [usersList]
+}
+
+type role {
+  role_key: String!
+}
+
+type ProductFields {
+  id: uuid!
+  name: String!
+  description: String!
+  image: String!
+  price: Int!
+}
+
+type productsOutput {
+  success: Boolean!
+  message: String!
+  data: [product]
+}
+
+type product {
+  id: uuid!
+  name: String!
+  description: String!
+  image: String!
+  price: Int!
+}
+
+type permissionResponse {
+  success: Boolean!
+  message: String!
+  data: [permissionKeys]
+}
+
+type permissionKeys {
+  permission_key: String!
+}
+
+type productOutput {
+  success: Boolean!
+  message: String!
+  data: product
+}
+
+type forgotPasswordResponse {
+  success: Boolean!
+  message: String!
+  data: token
+}
+
+type whoAmI {
+  success: Boolean!
+  message: String!
+  data: usersList
+}
+
+type rolesResponse {
+  success: Boolean!
+  message: String!
+  data: role
+}
+
+type usersByRoleResponse {
+  success: Boolean!
+  message: String!
+  data: [usersByRole]
+}
+
+type usersByRole {
+  id: uuid!
+  name: String!
+  email: String!
+}
+

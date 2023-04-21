@@ -1,0 +1,20 @@
+table:
+  name: role_permissions
+  schema: public
+object_relationships:
+  - name: permission
+    using:
+      foreign_key_constraint_on: permission_key
+  - name: role
+    using:
+      foreign_key_constraint_on: role_key
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - permission_key
+        - role_key
+        - created_at
+        - updated_at
+        - id
+      filter: {}

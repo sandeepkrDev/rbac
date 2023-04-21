@@ -1,0 +1,6 @@
+function:
+  name: get_permissions_by_role
+  schema: public
+configuration:
+  custom_root_fields: {}
+  exposed_as: mutation

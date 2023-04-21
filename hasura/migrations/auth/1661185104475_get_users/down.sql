@@ -1,0 +1,10 @@
+-- Could not auto-generate a down migration.
+-- Please write an appropriate down migration for the SQL below:
+-- CREATE OR REPLACE FUNCTION public.get_users()
+--  RETURNS SETOF users
+--  LANGUAGE plpgsql
+-- AS $function$
+-- BEGIN
+--     return query select * from public.users;
+-- END
+-- $function$;

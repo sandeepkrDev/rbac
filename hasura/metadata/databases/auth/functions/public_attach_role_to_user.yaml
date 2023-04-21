@@ -1,0 +1,6 @@
+function:
+  name: attach_role_to_user
+  schema: public
+configuration:
+  custom_root_fields: {}
+  exposed_as: mutation

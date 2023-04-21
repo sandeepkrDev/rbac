@@ -1,0 +1,6 @@
+function:
+  name: signin
+  schema: public
+configuration:
+  custom_root_fields: {}
+  exposed_as: mutation

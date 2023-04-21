@@ -1,0 +1,6 @@
+function:
+  name: detach_role_from_user
+  schema: public
+configuration:
+  custom_root_fields: {}
+  exposed_as: mutation

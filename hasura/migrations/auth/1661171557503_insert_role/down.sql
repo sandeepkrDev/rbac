@@ -1,0 +1,12 @@
+-- Could not auto-generate a down migration.
+-- Please write an appropriate down migration for the SQL below:
+-- CREATE OR REPLACE function insert_role(IN _roleName text)
+-- RETURNS SETOF roles
+-- language plpgsql
+-- AS $$
+-- begin
+--     INSERT INTO public.roles (key) VALUES (_roleName);
+--
+--     return query select * from public.roles where key = _roleName;
+-- end
+-- $$;

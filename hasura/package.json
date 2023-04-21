@@ -1,0 +1,15 @@
+{
+  "name": "hasura",
+  "description": "",
+  "scripts": {
+    "start:docker": "docker-compose -f docker-compose.yml up",
+    "start:console": "hasura console  --admin-secret=secret",
+    "apply:seeds": "hasura seed apply  --admin-secret=secret",
+    "apply:migrate": "hasura migrate apply --admin-secret=secret",
+    "status:migrate": "hasura migrate status --admin-secret=secret",
+    "export:metadata": "hasura metadata export --admin-secret=secret",
+    "clear:metadata": "hasura metadata clear --admin-secret=secret",
+    "apply:metadata": "hasura metadata apply --admin-secret=secret",
+    "list:metadata": "hasura metadata ic list --admin-secret=secret"
+  }
+}

@@ -1,0 +1,10 @@
+-- Could not auto-generate a down migration.
+-- Please write an appropriate down migration for the SQL below:
+-- CREATE OR REPLACE FUNCTION public.delete_permission(_permissionKey text)
+--     RETURNS SETOF permissions
+--     LANGUAGE plpgsql
+-- AS $function$
+-- BEGIN
+--     return query DELETE from permissions WHERE (key) = (_permissionKey) RETURNING *;
+-- END
+-- $function$;

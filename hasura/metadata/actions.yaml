@@ -1,0 +1,183 @@
+actions:
+  - name: addProduct
+    definition:
+      kind: synchronous
+      handler: http://host.docker.internal:3000/api/products/addProduct
+    permissions:
+      - role: user
+    comment: addProduct
+  - name: attachPermissionToRole
+    definition:
+      kind: synchronous
+      handler: http://host.docker.internal:3000/api/authorization/attachPermissionToRole
+    permissions:
+      - role: user
+    comment: attachPermissionToRole
+  - name: attachRoleToUser
+    definition:
+      kind: synchronous
+      handler: http://host.docker.internal:3000/api/authorization/attachRoleToUser
+    permissions:
+      - role: user
+    comment: attachRoleToUser
+  - name: changePassword
+    definition:
+      kind: synchronous
+      handler: http://host.docker.internal:3000/api/authentication/changePassword
+    permissions:
+      - role: user
+    comment: changePassword
+  - name: deletePermission
+    definition:
+      kind: synchronous
+      handler: http://host.docker.internal:3000/api/authorization/deletePermission
+    permissions:
+      - role: user
+    comment: deletePermission
+  - name: deleteRole
+    definition:
+      kind: synchronous
+      handler: http://host.docker.internal:3000/api/authorization/deleteRole
+    permissions:
+      - role: user
+    comment: deleteRole
+  - name: detachPermissionToRole
+    definition:
+      kind: synchronous
+      handler: http://host.docker.internal:3000/api/authorization/detachPermissionToRole
+    permissions:
+      - role: user
+    comment: detachPermissionToRole
+  - name: detachRoleToUser
+    definition:
+      kind: synchronous
+      handler: http://host.docker.internal:3000/api/authorization/detachRoleToUser
+    permissions:
+      - role: user
+    comment: detachRoleToUser
+  - name: forgotPassword
+    definition:
+      kind: ""
+      handler: http://host.docker.internal:3000/api/authentication/forgotPassword
+    permissions:
+      - role: anonymous
+    comment: forgotPassword
+  - name: getPermissions
+    definition:
+      kind: ""
+      handler: http://host.docker.internal:3000/api/authorization/getPermissions
+    permissions:
+      - role: user
+    comment: getPermissions
+  - name: getPermissionsByRole
+    definition:
+      kind: ""
+      handler: http://host.docker.internal:3000/api/authorization/getPermissionsByRole
+    permissions:
+      - role: user
+    comment: getPermissionsByRole
+  - name: getProducts
+    definition:
+      kind: ""
+      handler: http://host.docker.internal:3000/api/products/getProducts
+    permissions:
+      - role: user
+    comment: getProducts
+  - name: getRoles
+    definition:
+      kind: ""
+      handler: http://host.docker.internal:3000/api/authorization/getRoles
+    permissions:
+      - role: user
+    comment: getRoles
+  - name: getRolesByUserID
+    definition:
+      kind: ""
+      handler: http://host.docker.internal:3000/api/authorization/getRolesByUserID
+    permissions:
+      - role: user
+    comment: getRolesByUserID
+  - name: getUsers
+    definition:
+      kind: ""
+      handler: http://host.docker.internal:3000/api/authorization/getUsers
+    permissions:
+      - role: user
+    comment: getUsers
+  - name: getUsersByRole
+    definition:
+      kind: ""
+      handler: http://host.docker.internal:3000/api/authorization/getUsersByRole
+    permissions:
+      - role: user
+    comment: getUsersByRole
+  - name: insertPermission
+    definition:
+      kind: synchronous
+      handler: http://host.docker.internal:3000/api/authorization/insertPermission
+    permissions:
+      - role: user
+    comment: insertPermission
+  - name: insertRole
+    definition:
+      kind: synchronous
+      handler: http://host.docker.internal:3000/api/authorization/insertRole
+    permissions:
+      - role: user
+    comment: insertRole
+  - name: resetPassword
+    definition:
+      kind: synchronous
+      handler: http://host.docker.internal:3000/api/authentication/resetPassword
+    permissions:
+      - role: anonymous
+    comment: resetPassword
+  - name: signin
+    definition:
+      kind: ""
+      handler: http://host.docker.internal:3000/api/authentication/signin
+    permissions:
+      - role: anonymous
+  - name: signup
+    definition:
+      kind: synchronous
+      handler: http://host.docker.internal:3000/api/authentication/createuser
+    permissions:
+      - role: anonymous
+  - name: whoAmI
+    definition:
+      kind: ""
+      handler: http://host.docker.internal:3000/api/authentication/whoAmI
+    permissions:
+      - role: user
+    comment: whoAmI
+custom_types:
+  enums: []
+  input_objects:
+    - name: signinInput
+    - name: SampleInput
+  objects:
+    - name: usersList
+    - name: signupOutput
+    - name: token
+    - name: singinOutput
+    - name: response
+    - name: authResponse
+    - name: signinOutput
+    - name: SampleOutput
+    - name: listResponse
+    - name: lists
+    - name: usersResponse
+    - name: role
+    - name: ProductFields
+    - name: productsOutput
+    - name: product
+    - name: permissionResponse
+    - name: permissionKeys
+    - name: productOutput
+    - name: forgotPasswordResponse
+    - name: whoAmI
+    - name: rolesResponse
+    - name: usersByRoleResponse
+    - name: usersByRole
+  scalars: []
